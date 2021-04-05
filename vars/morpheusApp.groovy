@@ -3,9 +3,8 @@ import org.ranjith.JenkinsHttpClient
 
 def buildApp(String morpheusUrl, Map<?, ?> postBody, String bearerToken) {
 	String jsoncontent = new JsonBuilder(postBody).toString()
-	JenkinsHttpClient http = new JenkinsHttpClient()
-	return println bearerToken
-	
+	JenkinsHttpClient http = new JenkinsHttpClient()`
+	http.postJson(morpheusUrl, postBody, bearerToken)	
 }
 
 def getApp(String morpheusUrl, String bearerToken) {
