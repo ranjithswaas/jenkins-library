@@ -43,6 +43,7 @@ class JenkinsHttpClient {
                 .contentType('application/json')
                 .body(jsonbody)
                 .send()
+	        .trustAllCerts(true);
         return resp.bodyText()
     }
 
